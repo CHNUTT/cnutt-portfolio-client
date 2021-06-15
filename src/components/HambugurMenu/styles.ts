@@ -1,4 +1,4 @@
-import * as viewport from '../../styles/breakpoints';
+import * as viewport from '../../themes/breakpoints';
 import styled from 'styled-components';
 
 interface styleProp {
@@ -18,6 +18,7 @@ export const ButtonContainer = styled.div`
   @media screen and (min-width: ${viewport.md}) {
     width: 60px;
     height: 60px;
+    border-radius: 30px;
   }
 `;
 

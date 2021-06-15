@@ -7,7 +7,7 @@ export const HeaderContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 20px 0 40px;
 `;
 
 export const BrandContainer = styled.div`
