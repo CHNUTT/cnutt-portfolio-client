@@ -2,6 +2,7 @@ import { navigationActionTypes } from '../types';
 
 const INIT_STATE = {
   isSideMenuOpen: false,
+  currentPage: 0,
 };
 
 const NavigationReducer = (state = INIT_STATE, action: any) => {
@@ -10,6 +11,12 @@ const NavigationReducer = (state = INIT_STATE, action: any) => {
       return {
         ...state,
         isSideMenuOpen: !state.isSideMenuOpen,
+      };
+    case navigationActionTypes.CHANGE_ACTIVE_PAGE:
+      return {
+        ...state,
+        isSideMenuOpen: false,
+        currentPage: action.payload,
       };
     default:
       return state;

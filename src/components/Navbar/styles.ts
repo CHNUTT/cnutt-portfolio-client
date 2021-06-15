@@ -51,9 +51,9 @@ export const MenuItem = styled.li`
   margin-bottom: 20px;
 `;
 
-// export const MenuTextMask = styled.span`
-//   /* position: relative; */
-// `;
+interface IMenuTextProp {
+  isActive: boolean;
+}
 
 export const MenuText = styled.span`
   position: relative;
@@ -77,10 +77,14 @@ export const MenuText = styled.span`
     right: 0px;
     height: 13px;
     background: ${colors.gray};
-    opacity: 0.5;
     z-index: -1;
+    opacity: 0.5;
     transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
-    transform: scaleX(0) translateY(-50%);
+    ${(props: IMenuTextProp) =>
+      props.isActive
+        ? 'transform: scaleX(1) translateY(-50%); background-color: ' +
+          colors.primary
+        : 'transform: scaleX(0) translateY(-50%);'}
   }
 `;
 
@@ -103,6 +107,11 @@ export const SectionContact = styled.section`
 export const ContactName = styled.p`
   margin: 0 0 5px 0;
   font-style: italic;
+`;
+
+export const JobTitle = styled.p`
+  font-weight: bold;
+  font-size: 1.3rem;
 `;
 
 export const ContactInfo = styled.p`
