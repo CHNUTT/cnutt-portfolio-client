@@ -17,5 +17,5 @@ export const Section1Left = styled.div`
 
 export const Section1Right = styled.div`
   flex: 1;
-  background-color: #e5e5e5;
+  background-color: #f8f8f8;
 `;
