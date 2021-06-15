@@ -1,25 +1,23 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { ButtonContainer, Line } from './styles';
 
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { navigationSelector } from '../../redux/selectors';
 import { navigationActions } from '../../redux/actions';
-import { createStructuredSelector } from 'reselect';
 
 const HamburgurMemu: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const isNavOpen: boolean = useSelector(
+    navigationSelector.selectNavigationOpenStatus
+  );
 
   return (
-    <ButtonContainer onClick={() => setIsOpen(!isOpen)}>
-      <Line isOpen={isOpen} />
-      <Line isOpen={isOpen} />
-      <Line isOpen={isOpen} />
+    <ButtonContainer onClick={() => dispatch(navigationActions.toggleNavbar())}>
+      <Line isOpen={isNavOpen} />
+      <Line isOpen={isNavOpen} />
+      <Line isOpen={isNavOpen} />
     </ButtonContainer>
   );
 };
-
-// const mapStateToProps = createStructuredSelector({
-//   isNavigationOpen: navigationSelector.selectNavigationOpenStatus,
-// });
 
 export default HamburgurMemu;
