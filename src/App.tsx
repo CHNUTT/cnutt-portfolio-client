@@ -1,11 +1,15 @@
-import './App.scss';
+import { FC } from 'react';
+import HomePage from './pages/HomePage';
+import { Container } from './styles';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      Still working
-    </div>
+    <>
+      <Container>
+        <HomePage />
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
